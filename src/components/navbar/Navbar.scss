@@ -1,0 +1,152 @@
+#header {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__navbar {
+  display: flex;
+  align-items: center;
+
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+
+    li {
+      padding: 0 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: var(--gray-color);
+      &:first-child {
+        text-align: left;
+      }
+    }
+
+    &__services {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+
+.header__buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  .language {
+    font-size: 1rem;
+    color: var(--gray-color);
+  }
+
+  button {
+    padding: 0.7rem 2.5rem;
+    border: none;
+    border-radius: 20px;
+    background: var(--blue-color);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+.menu {
+  position: relative;
+  cursor: pointer;
+  width: 24px;
+  height: 20px;
+  transition: all 0.2s;
+
+  .top,
+  .middle,
+  .bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+
+  .middle {
+    transform: translateY(7px);
+  }
+
+  .bottom {
+    transform: translateY(14px);
+  }
+}
+
+.open {
+  transform: rotate(90deg) translateY(0px);
+}
+
+.open .top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .middle {
+  display: none;
+}
+
+.open .bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+
+.mobile__links {
+  width: 50%;
+  height: auto;
+  overflow: hidden;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  margin: 4rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    li {
+      padding: 2rem 0;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--gray-color);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__navbar,
+  .header__buttons {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .mobile__links {
+    display: none;
+  }
+}
