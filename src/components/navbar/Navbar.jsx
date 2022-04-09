@@ -62,15 +62,15 @@ const Header = () => {
         <div className='mobile__links'>
           <ul>
             <li>
-              <a href='#services'>
+              <a href='#services' onClick={() => setOpen(!open)}>
                 <span>Services</span> <AiFillCaretDown />
               </a>
             </li>
             <li>
-              <a href='#aboutus'>About us</a>
+              <a href='#aboutus' onClick={() => setOpen(!open)}>About us</a>
             </li>
             <li>
-              <a href='#blog'>Blog</a>
+              <a href='#blog' onClick={() => setOpen(!open)}>Blog</a>
             </li>
           </ul>
         </div>
